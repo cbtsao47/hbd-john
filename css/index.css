@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v13/FwZY7-Qmy14u9lezJ-6H6Mw.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+.birthday-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #ededed;
+  position: relative;
+}
+.birthday-container__text {
+  font-family: "Pacifico", cursive;
+  letter-spacing: 0.1rem;
+  color: #d0378c;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  font-size: 4rem;
+  padding: 2vmin;
+  margin: 0;
+  text-align: center;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  opacity: 0;
+  animation: birthday-container__text 1s 2s forwards;
+}
+.milea {
+  font-family: "Pacifico", cursive;
+  letter-spacing: 0.1rem;
+  color: #d0378c;
+  position: absolute;
+  z-index: 100;
+  top: 10;
+  font-size: 18vmin;
+  padding: 2vmin;
+  margin: 0;
+  text-align: center;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  opacity: 0;
+  animation: birthday-container__text 1s 2s forwards;
+}
+.birthday-container__fish {
+  position: absolute;
+  width: 100%;
+  max-width: 15%;
+  z-index: 999;
+  bottom: 55%;
+  animation: birthday-fish 2s 2s forwards;
+  opacity: 0;
+  transition: 2s;
+}
+@keyframes birthday-fish {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes birthday-container__text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.birthday-container__graphic {
+  width: 100vmin;
+  height: 100vmin;
+  background: #ededed;
+  position: relative;
+}
+.cake {
+  width: 50%;
+  height: 45%;
+  position: absolute;
+  transform: translate(-50%, 0%);
+  border: 2vmin solid black;
+  bottom: 3vmin;
+  left: 50%;
+  border-radius: 10vmin 10vmin 0 0;
+  background: linear-gradient(to right, #fee5cb 0%, #fee5cb 8%, #facc93 9%, #facc93 100%);
+}
+.cake__bottom {
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1.5vmin solid black;
+  background: linear-gradient(to bottom, #e999c4 0%, #e999c4 20%, #d0378c 25%, #d0378c 100%);
+}
+.cake__bottom::before {
+  content: " ";
+  position: absolute;
+  width: 9%;
+  height: 100%;
+  left: 0;
+  background: #fee5cb;
+}
+.cake__top {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background: #32b9ec;
+  border-radius: 10vmin 10vmin 0 0;
+  border-bottom: 2vmin solid black;
+}
+.cake__top::before {
+  content: " ";
+  width: 6%;
+  height: 0%;
+  position: absolute;
+  background: #32b9ec;
+  border-radius: 0 0 10vmin 10vmin;
+  border: 2vmin solid black;
+  border-top: none;
+  top: 100%;
+  left: 20%;
+  animation: cake__top-left 1.5s 1s forwards;
+}
+.cake__top::after {
+  @extend .cake__top::before;
+  left: 37%;
+  height: 0%;
+  animation: cake__top-right 2s 1s forwards;
+}
+@keyframes cake__top-left {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 140%;
+  }
+}
+@keyframes cake__top-right {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 230%;
+  }
+}
+.cake__cherry {
+  position: absolute;
+  width: 17%;
+  height: 17%;
+  background: #d0378c;
+  border-radius: 50%;
+  border: 1.5vmin solid black;
+  top: -18%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  animation: cake__cherry 1s forwards;
+}
+.cake__cherry::before {
+  content: " ";
+  width: 80%;
+  height: 60%;
+  position: absolute;
+  border-right: 1.5vmin solid black;
+  border-bottom: 1.5vmin solid black;
+  border-bottom-right-radius: 150%;
+  bottom: 100%;
+  left: 90%;
+  transform: rotate(-20deg);
+}
+@keyframes cake__cherry {
+  0% {
+    transform: translate(-50%, -5000%);
+  }
+  100% {
+    transform: translate(-50%, 0%);
+  }
+}
+/* inspired by Judith's Happy Birthday on dribble.com, https://dribbble.com/shots/3459946-Happy-birthday */
